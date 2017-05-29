@@ -9,6 +9,12 @@ import org.threeten.bp.ZonedDateTime;
 
 /**
  * Created by watanabear on 2017/05/30.
+ * MEMO
+ * ---
+ * It is worth noting that the @TypeConverters(DateTypeConverter.class)
+ * annotation automatically serializes the LocalDateTime object date
+ * into a String format of it and deserializes it back into a LocalDateTime object
+ * when it reads it out from storage.
  */
 
 public class DateTypeConverter {
