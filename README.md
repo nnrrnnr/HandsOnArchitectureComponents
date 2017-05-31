@@ -2,6 +2,8 @@
 - https://developer.android.com/topic/libraries/architecture/index.html
 - https://riggaroo.co.za/android-architecture-components-looking-room-livedata-part-1/
 
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓上記リンクの和訳↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
 ## 新しいArchitectureComponentsとは何か？
 
 アーキテクチャコンポーネントフレームワークは、Androidアプリケーションを作成するための基礎となる一連のライブラリとガイドラインです。開発者が幅広いアプリケーションにわたって直面する一般的なシナリオに対処します。このフレームワークは、ボイラープレートと反復コードの量を減らし、アプリケーションのコア機能に集中することを目指しています。
