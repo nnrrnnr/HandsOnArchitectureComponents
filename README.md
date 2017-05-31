@@ -1,6 +1,6 @@
 # HandsOnArchitectureComponents
-https://developer.android.com/topic/libraries/architecture/index.html
-https://riggaroo.co.za/android-architecture-components-looking-room-livedata-part-1/
+- https://developer.android.com/topic/libraries/architecture/index.html
+- https://riggaroo.co.za/android-architecture-components-looking-room-livedata-part-1/
 
 ## 新しいArchitectureComponentsとは何か？
 
