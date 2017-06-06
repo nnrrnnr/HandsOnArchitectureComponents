@@ -1,4 +1,4 @@
-package com.github.watanabear.handsonarchitecturecomponents.model;
+package com.github.watanabear.handsonarchitecturecomponents.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -7,17 +7,17 @@ import android.arch.persistence.room.PrimaryKey;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.temporal.ChronoUnit;
 
-import static android.arch.persistence.room.RoomMasterTable.TABLE_NAME;
+import static com.github.watanabear.handsonarchitecturecomponents.entity.Event.TABLE_NAME;
+
 
 /**
- * Created by watanabear on 2017/05/30.
- * イベント
+ * Created by ryo on 2017/06/06.
  */
+
 @Entity(tableName = TABLE_NAME)
 public class Event {
     public static final String TABLE_NAME = "events";
     public static final String DATE_FIELD = "date";
-
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String name;
@@ -61,4 +61,7 @@ public class Event {
     public long getDaysUntil() {
         return ChronoUnit.DAYS.between(LocalDateTime.now(), getDate());
     }
+
+
+
 }

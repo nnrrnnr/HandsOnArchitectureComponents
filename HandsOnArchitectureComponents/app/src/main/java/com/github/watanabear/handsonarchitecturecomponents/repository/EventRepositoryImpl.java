@@ -2,8 +2,8 @@ package com.github.watanabear.handsonarchitecturecomponents.repository;
 
 import android.arch.lifecycle.LiveData;
 
-import com.github.watanabear.handsonarchitecturecomponents.database.EventDataBase;
-import com.github.watanabear.handsonarchitecturecomponents.model.Event;
+import com.github.watanabear.handsonarchitecturecomponents.db.EventDatabase;
+import com.github.watanabear.handsonarchitecturecomponents.entity.Event;
 
 import org.threeten.bp.LocalDateTime;
 
@@ -14,30 +14,30 @@ import javax.inject.Inject;
 import io.reactivex.Completable;
 
 /**
- * Created by watanabear on 2017/05/30.
+ * Created by ryo on 2017/06/06.
  */
 
 public class EventRepositoryImpl implements EventRepository {
 
     @Inject
-    EventDataBase eventDataBase;
+    EventDatabase eventDatabase;
 
-    public EventRepositoryImpl(EventDataBase eventDataBase) {
-        this.eventDataBase = eventDataBase;
+    public EventRepositoryImpl(EventDatabase eventDatabase) {
+        this.eventDatabase = eventDatabase;
     }
 
     @Override
     public Completable addEvent(Event event) {
-        return Completable.fromAction(() -> eventDataBase.eventDao().addEvent(event));
+        return Completable.fromAction(() -> eventDatabase.eventDao().addEvent(event));
     }
 
     @Override
     public LiveData<List<Event>> getEvents() {
-        return eventDataBase.eventDao().getEvents(LocalDateTime.now());
+        return eventDatabase.eventDao().getEvents(LocalDateTime.now());
     }
 
     @Override
     public Completable deleteEvent(Event event) {
-        return Completable.fromAction(() -> eventDataBase.eventDao().deleteEvent(event));
+        return Completable.fromAction(() -> eventDatabase.eventDao().deleteEvent(event));
     }
 }
