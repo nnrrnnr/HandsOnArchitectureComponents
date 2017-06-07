@@ -34,6 +34,8 @@ public class AppModule {
         return new EventRepositoryImpl(eventDatabase);
     }
 
+    @Provides
+    @Singleton
     EventDatabase provideEventDatabase(Context context) {
         return Room.databaseBuilder(context.getApplicationContext(), EventDatabase.class, "event_db").build();
     }

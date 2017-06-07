@@ -20,6 +20,7 @@ import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
  */
 @Dao
 public interface EventDao {
+
     @Query("SELECT * FROM " + Event.TABLE_NAME + " WHERE " + Event.DATE_FIELD + " > :minDate")
     LiveData<List<Event>> getEvents(LocalDateTime minDate);
 
